@@ -8,9 +8,16 @@ import ProductCard from './components/ProductCard.jsx'
 import { Keyboards, Keycaps, Switches, Accessories } from  "./products/products.js"
 import './App.css'
 import ProductPage from './pages/ProductPage.jsx'
+import { GeneralPolicy, ReturnPolicy } from './products/policies.js';
+import Policy from './pages/PolicyPage.jsx'
+import Keyboard3D from './pages/CustomPage.jsx'
+import AboutMe from './pages/AboutMePage.jsx'
+
+
 
 function App() {
   const allProducts = [Keyboards, Keycaps, Switches, Accessories]
+  const policies = [...GeneralPolicy, ...ReturnPolicy]
 
   return (
     <>
@@ -40,7 +47,35 @@ function App() {
               />
             ))
           )}
+          {/* Policies */}
+          {/* {policies.map((policy)=>{
+            return <Route 
+              key={policy.id}
+              path={policy.link}
+              element={<Policy Policy={policy}></Policy>}
+            />
+          })} */}
+          <Route 
+          path="/policy"
+          element={<Policy Policy={GeneralPolicy[0]} />} />
+
+          <Route 
+          path="/return-policy"
+          element={<Policy Policy={ReturnPolicy[0]} />} />
+
+          <Route
+          path='/custom-keyboard-3D'
+          element={<Keyboard3D />} />
+
+          <Route 
+          path="/my-story"
+          element={<AboutMe />}/>
+
+          <Route 
+          path="/contacts"
+          element={<AboutMe aboutMe="contacts"/>}/>
         </Routes>
+            
       <Footer></Footer>
     </>
   )

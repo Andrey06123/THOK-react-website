@@ -1,13 +1,11 @@
 
-// src/products/products.js
-
 export const Keyboards = [
   {
     id: 1,
     name: "Hammerhead",
     subTitle: "Magnetic Switch keyboard",
     subSubTitle: "Keyboard photos are from round 1 and may contain keycaps not included in this base kit.",
-    price: "From €219.00",
+    price: "€219.00",
     link: "/product-hammerhead",
     img: "/product1/img1.webp",
     images: [
@@ -23,7 +21,7 @@ export const Keyboards = [
     name: "Blue Dragon",
     subTitle: "Low Profile Wireless",
     subSubTitle: "Keyboard photos are from round 1 and may contain keycaps not included in this base kit.",
-    price: "From €114.00",
+    price: "€114.00",
     link: "/product-blue-dragon",
     img: "/product2/img1.avif",
     images: [
@@ -40,7 +38,7 @@ export const Keyboards = [
     name: "Rainy 75",
     subTitle: "Custom Wireless Keyboard",
     subSubTitle: "Keyboard photos are from round 1 and may contain keycaps not included in this base kit.",
-    price: "From €160.00",
+    price: "€160.00",
     link: "/product-rainy-75",
     img: "/product3/img1.jpg",
     images: [
@@ -56,7 +54,7 @@ export const Keyboards = [
     name: "Mountain",
     subTitle: "Custom Wireless Keyboard",
     subSubTitle: "Keyboard photos are from round 1 and may contain keycaps not included in this base kit.",
-    price: "From €160.00",
+    price: "€160.00",
     link: "/product-mountain",
     img: "/product4/img1.png",
     images: [
@@ -66,9 +64,6 @@ export const Keyboards = [
     ]
   }
 ]
-
-// src/products/products.js
-
 export const Keycaps = [
   {
     id: 1,
@@ -133,8 +128,6 @@ export const Keycaps = [
     ]
   }
 ];
-// src/products/products.js
-
 export const Switches = [
   {
     id: 1,
@@ -189,7 +182,6 @@ export const Switches = [
     ]
   }
 ];
-
 export const Accessories = [
   {
     id: 1,

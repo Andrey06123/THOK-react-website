@@ -1,21 +1,23 @@
-
+import { useState } from 'react'
 import '../css/product.css'
 
 export default function ProductPage({product}){
-
-
+  const [index, setIndex] = useState(0);
 
   return(
     <main className="product-container" key={product.id}>
         
         <section className="image-gallery">
             <div className="main-image">
-                <img src={product.images[0]} />
+                <img src={product.images[index]} />
                 <span className="image-caption">*Real Photo</span>
             </div>
             <div className="thumbnail-grid">
-              {product.images.map((img)=>
-                {return (<div className="thumb active">
+              {product.images.map((img, i)=>
+                {return (
+                <div key={i}
+                    className={`thumb ${index === i ? "active" : ""}`}
+                    onClick={() => setIndex(i)}>
                   <img src={img} alt="Thumb" />
                 </div>)
                 })}
@@ -25,10 +27,9 @@ export default function ProductPage({product}){
 
         <section className="product-details">
             <h1 className="product-title">{product.name}</h1>
-            <h2 className="product-subtitle">{product.desc}</h2>
+            <h2 className="product-subtitle">{product.subTitle}</h2>
 
-            <p className="disclaimer-text">
-                Keyboard photos are from round 1 and may contain keycaps not included in this base kit.
+            <p className="disclaimer-text">{product.subSubTitle}
             </p>
             
             <div className="product-price">{product.price}</div>

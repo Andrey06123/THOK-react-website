@@ -43,7 +43,7 @@ export default function Homepage(){
                 </Link>
               )}
             </div>      
-            <img src={item.img} alt={item.name} />
+            <img src={item.img} className={`imgIdx${index}`} alt={item.name} />
           </div>
         )
       })}
@@ -115,24 +115,24 @@ const CarouselItems = [
     name: "Blue dragon",
     desc: "A full metal QMK/VIA wireless custom mechanical keyboard.",
     btnText: "Shop Now",
-    link: "/product2",
+    link: "/product-blue-dragon",
     img: "/main/main-1.jpg"
   },
   {
     id: 2,
-    name: "Green Cream",
+    name: "Blossom",
     desc: "A full metal QMK/VIA wireless custom mechanical keyboard.",
     btnText: "Coming soon",
     link: "#",
-    img: "/main/main-2.webp"
+    img: "/main/main-2.jpg"
   },
   {
     id: 3,
     name: "Rainy 75",
     desc: "A full metal QMK/VIA wireless custom mechanical keyboard.",
     btnText: "Shop Now",
-    link: "/product3",
-    img: "/product3/img3.jpg"
+    link: "//product-rainy-75",
+    img: "/product3/img5.jpeg"
   },
   {
     id: 4,

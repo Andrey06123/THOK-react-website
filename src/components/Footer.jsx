@@ -1,4 +1,6 @@
 import '../css/Navigation.css'
+import { Link } from "react-router";
+
 
 export default function Footer(){
   return(
@@ -6,20 +8,20 @@ export default function Footer(){
               <div className="footer-columns">
                   <div className="footer-col">
                       <h4>About Us</h4>
-                      <a href="about-me/my-story.html">Our Story</a>
-                      <a href="about-me/contacts.html">Contact Us</a>
+                      <Link to="/my-story">Our Story</Link>
+                      <Link to="/contacts">Contact Us</Link>
                   </div>
                   <div className="footer-col">
                       <h4>Support</h4>
-                      <a href="policy.html">Policy</a>
-                      <a href="return_policy.html">Return and Shipping Policy</a>
-                      <a href="#">Track Order</a>
+                      <Link to="/policy">Policy</Link>
+                      <Link to="/return-policy">Return and Shipping Policy</Link>
+                      <Link to="#">Track Order</Link>
                   </div>
                   <div className="footer-col">
                       <h4>Community</h4>
-                      <a href="#">Facebook Group</a>
-                      <a href="#">Discord</a>
-                      <a href="#">Reddit</a>
+                      <Link to="#">Facebook Group</Link>
+                      <Link to="#">Discord</Link>
+                      <Link to="#">Reddit</Link>
                   </div>
                   <div className="footer-col newsletter">
                       <h4>Stay in the loop</h4>
