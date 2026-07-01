@@ -2,7 +2,7 @@ import { useState,useEffect} from "react"
 import { Link } from "react-router"
 import '../css/homepage.css'
 import { Keyboards } from  "../products/products.js"
-
+import { formatCurrency } from "../units/formatCurrency.js"
 
 
 export default function Homepage(){
@@ -76,7 +76,7 @@ export default function Homepage(){
                    {Keyboards.map((keyboard)=> {
                     return(
                     <Link 
-                    to={keyboard.link} 
+                    to={`/${keyboard.slug}`}
                     key={keyboard.id}>
                     <div className="product-card">
                           <div className="product-image placeholder-img">
@@ -85,7 +85,10 @@ export default function Homepage(){
                           <div className="product-info">
                               <h3>{keyboard.name}</h3>
                               <p>{keyboard.subTitle}</p>
-                              <span className="price">{keyboard.price}</span>
+                              <span className="price">
+                                {/* {keyboard.price} */}
+                                {formatCurrency(keyboard.price, keyboard.currency)}
+                              </span>
                           </div>
                       </div></Link>
                     )})}
@@ -115,7 +118,7 @@ const CarouselItems = [
     name: "Blue dragon",
     desc: "A full metal QMK/VIA wireless custom mechanical keyboard.",
     btnText: "Shop Now",
-    link: "/product-blue-dragon",
+    link: "/blue-dragon",
     img: "/main/main-1.jpg"
   },
   {
@@ -131,7 +134,7 @@ const CarouselItems = [
     name: "Rainy 75",
     desc: "A full metal QMK/VIA wireless custom mechanical keyboard.",
     btnText: "Shop Now",
-    link: "//product-rainy-75",
+    link: "/rainy-75",
     img: "/product3/img5.jpeg"
   },
   {

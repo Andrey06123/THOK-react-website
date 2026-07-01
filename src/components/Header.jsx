@@ -1,9 +1,18 @@
 import { useState } from "react";
 import { Link } from "react-router";
 import "../css/Navigation.css";
+import CartMenu from "./CartMenu";
+import {Keyboards} from "../products/products.js"
+import { useCartStore } from "../store/cartStore.js";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [cartMenuOpen, setCartMenuOpen] = useState(false);
+  
+  const cartItems = useCartStore(state => state.cartItems);
+  const increaseQuantity = useCartStore(state => state.increaseQuantity);
+  const decreaseQuantity = useCartStore(state => state.decreaseQuantity);
+  
 
   return (
     <header className="main-header">
@@ -25,7 +34,8 @@ export default function Header() {
         
 
         <img src="/icons/account.svg" alt="" />
-        <img src="/icons/cart-shopping.svg" alt="" />
+        <img src="/icons/cart-shopping.svg" alt=""
+        onClick={()=> setCartMenuOpen(!cartMenuOpen)} />
         <button
           className={`hamburger ${menuOpen ? "open" : ""}`}
           onClick={() => setMenuOpen(!menuOpen)}
@@ -69,6 +79,12 @@ export default function Header() {
           </Link>
         </div>
       )}
+      {cartMenuOpen && 
+      (<CartMenu  cartItems={cartItems}
+                  onIncreaseQuantity={increaseQuantity}
+                  onDecreaseQuantity={decreaseQuantity}
+       />)}
     </header>
   );
 }
+

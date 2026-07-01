@@ -12,6 +12,7 @@ import { GeneralPolicy, ReturnPolicy } from './products/policies.js';
 import Policy from './pages/PolicyPage.jsx'
 import Keyboard3D from './pages/CustomPage.jsx'
 import AboutMe from './pages/AboutMePage.jsx'
+import ScrollToTop from './components/ScrollToTheTop.jsx'
 
 
 
@@ -21,6 +22,7 @@ function App() {
 
   return (
     <>
+    <ScrollToTop />
       <Header></Header>
         <Routes>
           <Route path="/" element={<Homepage />}></Route>
@@ -42,7 +44,7 @@ function App() {
             category.map((product) => (
               <Route
                 key={product.id}
-                path={product.link}
+                path={`/${product.slug}`}
                 element={<ProductPage product={product} />}
               />
             ))

@@ -1,8 +1,13 @@
 import { useState } from 'react'
 import '../css/product.css'
+import { useCartStore } from '../store/cartStore';
+import { formatCurrency } from '../units/formatCurrency';
 
 export default function ProductPage({product}){
   const [index, setIndex] = useState(0);
+  const [quantity, setQuantity] = useState(1);
+
+  const addToCart = useCartStore(state => state.addToCart)
 
   return(
     <main className="product-container" key={product.id}>
@@ -32,16 +37,41 @@ export default function ProductPage({product}){
             <p className="disclaimer-text">{product.subSubTitle}
             </p>
             
-            <div className="product-price">{product.price}</div>
+            <div className="product-price">{formatCurrency(product.price, product.currency)}</div>
             
             <p className="shipping-note"><a href="#">Shipping</a> calculated at checkout.</p>
             
             <div className="quantity-selector">
-                <label for="quantity">Quantity</label>
-                <input type="number" id="quantity" value="1" min="1" />
+                <p><b>Quantity: </b></p>
+                <div className="quantity-counter">
+            <button onClick={
+                () => setQuantity(prev => Math.max(prev - 1, 1))
+                }>
+                <img src="/icons/round-minus.svg" alt="" />
+            </button>
+
+            <p>{quantity}</p>
+
+            <button onClick={
+                () => setQuantity(prev => prev + 1)}>
+                <img src="/icons/round-plus.svg" alt="" />
+            </button>
             </div>
-            <div className="btn-div">
-                  <button>Buy now</button>
+            </div>
+            <div className="btn-div"
+            // onClick={() => {
+            //     // const item = new CartItem(product.name, product.price, quantity, product.img)
+            //     // if(cartItems.includes(product.name)){
+            //     //     console.log(item)
+            //     //     return;
+            //     // }
+            //     // cartItems.push(item);
+
+            // }}
+            >
+                  <button onClick={() => addToCart(product , quantity)}>
+                    Buy now
+                    </button>
             </div>
 
             <div className="accordion-group">

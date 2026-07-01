@@ -131,9 +131,35 @@
     gap: 8px;
     margin-bottom: 30px;
 }
+.quantity-counter{
+    display: flex;
+    width: fit-content;
+    padding-block: .5rem;
+    padding-inline: 1rem;
+    border-radius: 1rem;
+    gap: 1rem;
+    align-items: center;
+    border: #000 1px solid;
 
-.quantity-selector label {
-    font-size: 14px;
+    img{
+        padding: .5rem;
+        max-width: 30px;
+        aspect-ratio: 1/1;
+        border-radius: 1rem;
+        transition: background-color 300ms ease-in-out;
+    }
+    button{
+        max-width: fit-content;
+        max-height: 30px;
+        
+    }
+    img:hover{
+        background-color: #ccc;
+    }
+}
+
+.quantity-selector p {
+    font-size: 1.2rem;
     font-weight: bold;
 }
 
