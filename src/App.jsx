@@ -13,6 +13,7 @@ import Policy from './pages/PolicyPage.jsx'
 import Keyboard3D from './pages/CustomPage.jsx'
 import AboutMe from './pages/AboutMePage.jsx'
 import ScrollToTop from './components/ScrollToTheTop.jsx'
+import AuthPage from './pages/AuthPage.jsx'
 
 
 
@@ -76,6 +77,10 @@ function App() {
           <Route 
           path="/contacts"
           element={<AboutMe aboutMe="contacts"/>}/>
+
+          <Route 
+          path='/account'
+          element={<AuthPage />} />
         </Routes>
             
       <Footer></Footer>

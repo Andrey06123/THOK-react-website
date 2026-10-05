@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import {supabase} from "../lib/supabase.js"
 import { Link } from "react-router";
 import "../css/Navigation.css";
 import CartMenu from "./CartMenu";
@@ -32,8 +33,9 @@ export default function Header() {
 
       <div className="nav-icons">
         
-
-        <img src="/icons/account.svg" alt="" />
+        <Link to="/account">
+          <img src="/icons/account.svg" alt="" />
+        </Link>
         <img src="/icons/cart-shopping.svg" alt=""
         onClick={()=> setCartMenuOpen(!cartMenuOpen)} />
         <button
